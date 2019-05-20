@@ -1,0 +1,127 @@
+$_main-content-spacing: 35px;
+
+body {
+    color: $text-color;
+}
+
+// APP LAYOUT STYLES
+.app {
+    &-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+    }
+
+    &-main-content {
+        padding: $_main-content-spacing 10px $_main-content-spacing $_main-content-spacing;
+        margin-left: $app-sidebar-width;
+        width:  600px;
+        @media screen and (max-width: 576px) {
+            margin-left: 0;
+            padding: 20px 25px;
+        }
+    }
+
+    &-main {
+        &-title {
+            color: $primary-color;
+            font-weight: bold;
+            position: relative;
+
+            .app-task__add{
+                position: absolute;
+                right: 0;
+                top: 0;
+                background-color: $secondary-color;
+                border: none;
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform .2s cubic-bezier(0.4, 0.0, 0.2, 1);
+                
+                img {
+                    height: 15px;
+                    width: 15px;
+                }
+
+                &:hover {
+                    transform: scale(1.15);
+                    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14);
+                }
+                
+            }
+        }
+    }
+}
+
+// APP PROFILE SECTION
+.app {
+    &-profile {
+        &__container {
+            img {
+                height: 90px;
+                width: 90px;
+            }
+        }
+    }
+}
+
+// APP SIDENAV
+.app {
+    &-side-nav {
+        position: fixed;
+        height: 100%;
+        width: $app-sidebar-width;
+        padding: $_main-content-spacing 25px 0;
+        background: #203795;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #141A81, #203795);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #141A81, #203795); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        @media screen and (max-width: 576px) {
+            display: none;
+        }
+
+        &__menu {
+            & > li {
+                background-color: transparent;
+                padding:  8px 0;
+                font-size: 14px;
+                border-color: rgba(255, 255, 255, 0.05);
+
+                &:first-child {
+                    border-color: transparent;
+                }
+
+                a {
+                    color: rgba(255, 255, 255, 0.6);
+                    text-decoration: none;
+
+                    &:hover {
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+                }
+            }
+        }
+
+        &__icon {
+            margin-right: 5px;
+            img {
+                position: relative;
+                top: -2px;
+                height: 12px;
+            }
+        }
+
+    }
+}
+
+
+@import 'Components/app-search';
+@import 'Components/app-login';
+@import 'Components/app-task';
+
+@import 'Accesibility/app-dark';

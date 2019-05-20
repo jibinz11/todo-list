@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Todo.DataAccess</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Todo.Data.Nonpersistent\Todo.Data.Nonpersistent.csproj" />
+    <ProjectReference Include="..\Todo.Shared\Todo.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

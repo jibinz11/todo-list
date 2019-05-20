@@ -1,0 +1,38 @@
+// APP SEARCH SECTION
+.app {
+    &-search {
+
+        &--light {
+            input {
+                background-color: rgba(255, 255, 255, 0.1);
+                border: none;
+                outline: none;
+                color: #fff;
+
+                &:active, &:focus {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    box-shadow: none;
+                    border: none;
+                    color: #fff;
+                }
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.3);
+                }
+            }
+            .input-group-text {
+                background-color: rgba(255, 255, 255, 0.1);
+                border: none;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 14px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+$_dark-primary-color: #1B1C21;
+$_dark-primary-color-dark: #141419;
+$_dark-text-color: #c7c9d1;
+
+
+body {
+    &.dark-knight {
+        background-color: $_dark-primary-color;
+        color: $_dark-text-color;
+
+        .app {
+            &-side-nav {
+                background-color: $_dark-primary-color-dark;
+                background: $_dark-primary-color-dark;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to bottom, $_dark-primary-color-dark, $_dark-primary-color);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to bottom, $_dark-primary-color-dark, $_dark-primary-color); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+
+            &-main-title, &-task__title {
+                color: lighten($_dark-text-color, 15);
+            }
+
+            &-task__item {
+                background-color: $_dark-primary-color;
+                border-color: lighten($_dark-primary-color-dark, 6);
+
+                &:hover {
+                    background-color: lighten($_dark-primary-color, 2);
+
+                    .close {
+                        background-color: hsl(0, 84%, 65%);
+                    }
+                }
+
+                &-title {
+                    .app-task__item-date {
+                        background-color: $_dark-primary-color-dark;
+                    }
+                }
+
+                &-desc {
+                    color: #81839c;
+                }
+
+                input[type="checkbox"] {
+                    &:before {
+                        border-color: #454754;
+                    }
+                    &:checked {
+                        &::before {
+                            border-color: #c7c9d1;
+                        }
+
+                        &:after {
+                            background-image: url("./images/checkmark-dark.svg");
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        // Utilities
+        .text-primary {
+            color: $_dark-text-color !important;
+        }
+        .text-muted {
+            color: $_dark-text-color !important;
+        }
+        .badge-primary {
+            background-color: $_dark-primary-color-dark !important;
+        }
+        .badge-light {
+            background-color: lighten($_dark-primary-color-dark, 8) !important;
+        }
+        .btn-primary {
+            background-color: $_dark-primary-color-dark !important;
+            border-color: lighten($_dark-primary-color-dark, 6) !important;
+        }
+        .form-control {
+            background-color: transparentize( #fff,.9);
+            border-color: transparentize( #fff,.8);
+            color: $_dark-text-color;
+
+            &::placeholder {
+                colo: transparentize( #fff,.7);
+            }
+        }
+
+        .btn-light {
+            background-color: transparent;
+            color: $_dark-text-color;
+            border-color:  transparent;
+
+            &:hover {
+                background-color: transparentize( #fff,.9);
+            }
+        }
+    }
+}

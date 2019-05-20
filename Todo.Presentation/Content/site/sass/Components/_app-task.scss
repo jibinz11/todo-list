@@ -1,0 +1,148 @@
+$_checkbox-size: 18px;
+$_checkbox-spacing: 23px;
+
+// APP TASK COMPONENT
+.app {
+    &-task {
+
+        &__title {
+            color: $primary-color;
+            font-weight: bold;
+
+            small {
+                font-size: 14px;
+            }
+        }
+
+        &__list {
+            & > li {
+                border-color: #f1f1f4;
+
+                &:first-child {
+                    border-top-color: transparent;
+                }
+            }
+
+
+        }
+
+        &__item {
+            position: relative;
+            padding-left: 10px;
+            padding-right: 0px;
+            margin-left: $_checkbox-spacing;
+
+            // Checkbox Styling
+            input[type="checkbox"] {
+                visibility: hidden; 
+                position: absolute;
+                left: - $_checkbox-spacing;
+                height: $_checkbox-size;
+                width: $_checkbox-size;
+                cursor: pointer;
+
+                &:before {
+                    visibility: visible;
+                    content: '';
+                    height: $_checkbox-size;
+                    width: $_checkbox-size;
+                    display: block;
+                    border: 2px solid #C2C4D9;
+                    border-radius: 50%;
+                }
+
+                &:checked {
+
+                    opacity: .9;
+
+                    &:before {
+                        border-color: $primary-color;
+                    }
+                    &:after {
+                        content: '';
+                        display: block;
+                        background: url('./images/checkmark.svg') no-repeat;
+                        visibility: visible;
+                        height: 14px;
+                        width: 14px;
+                        position: absolute;
+                        top: 0;
+                        left: 3px;
+                    }
+                    & + .app-task__item-title {
+                        color: $muted-text;
+                        text-decoration: line-through;
+                    }
+
+                    & + .app-task__item-title + .app-task__item-desc {
+                        display: none;
+                    }
+                }
+            }
+            // Title Description Styling
+            &-title {
+                line-height: 1;
+                margin: 0;
+                font-weight: 500;
+                position: relative;
+                padding-right: 75px;
+
+                .app-task__item-date {
+                    position: absolute;
+                    top: -3px;
+                    right: 0;
+                    font-size: 11px;
+                    color: $muted-text;
+                    background-color: lighten($muted-text, 42);
+                    padding: 3px 5px;
+                    border-radius: 3px;
+                    transition: opacity .25s ease-in-out;
+                }
+            }
+            &-desc {
+                line-height: 1;
+                margin: 0;
+                color: $muted-text;
+                font-size: 80%;
+            }
+
+            // Close Button
+            .close {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 30px;
+                opacity: 0;
+                transition: opacity .25s ease-in-out;
+                outline: none;
+                
+                & > span {
+                    height: 18px;
+                    width: 18px;
+                    display: inline-block;
+                    background: url('./images/delete.svg') no-repeat;
+                    background-size: 18px;
+
+                }
+
+                &:hover {
+                    background-color: darken(#f48080, 10) !important;
+                }
+                
+            }
+
+            // Pseudo States
+            &:hover {
+                background-color: #fafaff;
+                .app-task__item-date {
+                    opacity: 0;
+                }
+                .close {
+                    opacity: 1 !important; 
+                    background-color: #f48080;
+                }
+            }
+        }
+    }
+}
