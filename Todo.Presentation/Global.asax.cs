@@ -53,7 +53,7 @@ namespace Todo.Presentation
             User user4 = new Shared.Types.User
             {
                 FirstName = "Kane",
-                LastName = "Wiliamson",
+                LastName = "Williamson",
                 Id = Guid.NewGuid(),
                 Password = "password4",
                 UserName = "testuser4"
