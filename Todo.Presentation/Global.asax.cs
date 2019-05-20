@@ -28,16 +28,16 @@ namespace Todo.Presentation
             #region db-populate
             User user1 = new Shared.Types.User
             {
-                FirstName = "Steve",
-                LastName = "Waugh",
+                FirstName = "Glenn",
+                LastName = "Maxwell",
                 Id = new Guid("1ea47150-0c5e-43d3-a84e-f0ce16eb62f2"),
                 Password = "password1",
                 UserName = "testuser1"
             };
             User user2 = new Shared.Types.User
             {
-                FirstName = "Mathew",
-                LastName = "Hayden",
+                FirstName = "Jesus",
+                LastName = "Christ",
                 Id = Guid.NewGuid(),
                 Password = "password2",
                 UserName = "testuser2"
@@ -71,7 +71,6 @@ namespace Todo.Presentation
             userEntity.Add(user3);
             userEntity.Add(user4);
             userEntity.Add(user5);
-
 
             var r = new Random();
             for (int i = 0; i < 50; i++)
