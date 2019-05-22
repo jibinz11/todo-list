@@ -66,11 +66,20 @@ namespace Todo.Presentation
                 Password = "password5",
                 UserName = "testuser5"
             };
+            User user6 = new Shared.Types.User
+            {
+                FirstName = "Peter",
+                LastName = "Henry",
+                Id = Guid.NewGuid(),
+                Password = "password6",
+                UserName = "testuser6"
+            };
             userEntity.Add(user1);
             userEntity.Add(user2);
             userEntity.Add(user3);
             userEntity.Add(user4);
             userEntity.Add(user5);
+            userEntity.Add(user6);
 
             var r = new Random();
             for (int i = 0; i < 50; i++)
@@ -87,6 +96,17 @@ namespace Todo.Presentation
                 };
                 taskEntity.Add(t);
             }
+            Task daily6 = new Task
+            {
+                Id = Guid.NewGuid(),
+                Title = "Daily Call",
+                Description = "Daily call for team leads and developers with client at 6pm",
+                CreatedOn = DateTime.Now,
+                DueOn = DateTime.Now,
+                Completed = false,
+                User = user6
+            };
+            taskEntity.Add(daily6);
             Task scrum1 = new Task
             {
                 Id = Guid.NewGuid(),
@@ -142,6 +162,18 @@ namespace Todo.Presentation
                 User = user5
             };
             taskEntity.Add(scrum5);
+            Task scrum6 = new Task
+            {
+                Id = Guid.NewGuid(),
+                Title = "Daily Scrum Meeting",
+                Description = "Daily standup meeting conducts on 10 AM with all the developers, Test leads and the client if available",
+                CreatedOn = DateTime.Now,
+                DueOn = DateTime.Now,
+                Completed = false,
+                User = user6
+            };
+            taskEntity.Add(scrum6);
+            
             #endregion db-populate
         }
     }

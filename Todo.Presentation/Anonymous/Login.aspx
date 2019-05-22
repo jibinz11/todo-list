@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-12">
                             <p class="text-center text-muted mt-5">
-                                <small>Don't have and account? <a href="#"><strong>Register</strong></a></small>
+                                <small>Don't have an account? <a href="#"><strong>Register</strong></a></small>
                             </p>
                         </div>
                     </div>

@@ -16,19 +16,7 @@ namespace Todo.Domain
         public bool Add(User user)
         {
             return _repo.Add(user);
-        }
-        public bool Delete(string id)
-        {
-            return _repo.Delete(id);
-        }
-        public IList<User> Get()
-        {
-            return _repo.Get();
-        }
-        public int Count()
-        {
-            return _repo.Count();
-        }
+        }       
         public Tuple<bool, string,string> Authenticate(string userName, string password)
         {
             User user = _repo.Find(userName);
